@@ -9,6 +9,7 @@ import {
 import LoginPage from './Pages/LoginPage';
 import SignUpPage from './Pages/SignUpPage';
 import CartPage from './Pages/CartPage';
+import CheckOutPage from './Pages/CheckOutPage';
 
 const router = createBrowserRouter([
   {
@@ -22,18 +23,24 @@ const router = createBrowserRouter([
   {
     path: '/signup',
     element: <SignUpPage />,
-  }, {
+  },
+  {
     path: '/cart',
     element: <CartPage />
-  }
+  },
+  {
+    path: '/checkout',
+    element: <CheckOutPage />
+  },
+
 ]);
 
 function App() {
 
   return (
-    <>
+    <div className='bg-blue-300'>
       <RouterProvider router={router} />
-    </>
+    </div>
   )
 }
 
