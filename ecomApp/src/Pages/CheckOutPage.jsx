@@ -56,6 +56,57 @@ const addresses = [
         lastSeen: null,
     },
 ]
+const persons = [
+    {
+        name: "Ravi Kumar",
+        street: "Bela",
+        city: "Patna",
+        pincode: 800001,
+        state: "Bihar",
+        Phone: 9470290516
+    },
+    {
+        name: "Ravi",
+        street: "Bela",
+        city: "Patna",
+        pincode: 800001,
+        state: "Bihar",
+        Phone: 9470290516
+    },
+    {
+        name: "Ravi",
+        street: "Bela",
+        city: "Patna",
+        pincode: 800001,
+        state: "Bihar",
+        Phone: 9470290516
+    },
+    {
+        name: "Ravi",
+        street: "Bela",
+        city: "Patna",
+        pincode: 800001,
+        state: "Bihar",
+        Phone: 9470290516
+    },
+    {
+        name: "Ravi",
+        street: "Bela",
+        city: "Patna",
+        pincode: 800001,
+        state: "Bihar",
+        Phone: 9470290516
+    },
+    {
+        name: "Ravi",
+        street: "Bela",
+        city: "Patna",
+        pincode: 800001,
+        state: "Bihar",
+        Phone: 9470290516
+    },
+
+]
 
 const products = [
     {
@@ -220,26 +271,41 @@ const CheckOutPage = () => {
                                 </div>
                             </div>
                         </div>
+
+
+                        <div className='flex justify-end items-center gap-x-6 mt-6 '>
+                            <button type='reset' className='text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-300 px-3 py-2'>Reset</button>
+
+                            <button type='submit' className='rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-800'> Add Address</button>
+                        </div>
                         <div className="border-b border-gray-900/10 pb-12">
-                            <h2 className="text-base font-semibold leading-7 text-gray-900">Address</h2>
+                            <h2 className="text-base font-semibold leading-7 text-gray-900">Existing Address</h2>
                             <p className="mt-1 text-sm leading-6 text-gray-600">
                                 choose from existing addresses
                             </p>
                             <ul role="list" className="divide-y divide-gray-100">
-                                {addresses.map((address) => (
-                                    <li key={address.email} className="flex justify-between gap-x-6 py-5">
+                                {persons.map((person, index) => (
+                                    <li key={index} className="flex justify-between gap-x-6 py-5">
                                         <div className="flex min-w-0 gap-x-4">
-                                            <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={address.imageUrl} alt="" />
-                                            <div className="min-w-0 flex-auto">
-                                                <p className="text-sm font-semibold leading-6 text-gray-900">{address.name}</p>
-                                                <p className="mt-1 truncate text-xs leading-5 text-gray-500">{address.email}</p>
+                                            <input
+                                                id="card"
+                                                name="address"
+                                                type="radio"
+                                                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                                            />
+                                            <div className=' flex flex-col'  >
+                                                <h1 className="  font-bold bg-gray-50" >{person.name}</h1>
+                                                <div className="min-w-0 flex-auto">
+                                                    <p className="text-sm font-semibold leading-6 text-gray-900">{person.street}</p>
+                                                    <p className="mt-1 truncate text-xs leading-5 text-gray-500">{person.city}</p>
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                                            <p className="text-sm leading-6 text-gray-900">{address.role}</p>
-                                            {address.lastSeen ? (
+                                            <p className="text-sm leading-6 text-gray-900">{person.pincode}</p>
+                                            {/* {address.lastSeen ? (
                                                 <p className="mt-1 text-xs leading-5 text-gray-500">
-                                                    Last seen <time dateTime={address.lastSeenDateTime}>{address.lastSeen}</time>
+                                                    Last seen <time dateTime={person.lastSeenDateTime}>{person.lastSeen}</time>
                                                 </p>
                                             ) : (
                                                 <div className="mt-1 flex items-center gap-x-1.5">
@@ -248,7 +314,7 @@ const CheckOutPage = () => {
                                                     </div>
                                                     <p className="text-xs leading-5 text-gray-500">Online</p>
                                                 </div>
-                                            )}
+                                            )} */}
                                         </div>
                                     </li>
                                 ))}
@@ -349,12 +415,12 @@ const CheckOutPage = () => {
                             </div>
                             <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                             <div className="mt-6">
-                                <a
-                                    href="#"
+                                <Link to='/pay'
+
                                     className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                                 >
-                                    Checkout
-                                </a>
+                                    Pay Now
+                                </Link>
                             </div>
                             <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                                 <p>
